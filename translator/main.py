@@ -135,4 +135,23 @@ translate_btn.pack(side=RIGHT, padx=5)
 # Shortcut
 app.bind_all("<Control-Return>", lambda e: translate())
 
+# Enable Ctrl+V (paste) in input_text
+def paste_input(event=None):
+    input_text.event_generate("<<Paste>>")
+    return "break"
+
+input_text.bind("<Control-v>", paste_input)  # Windows/Linux
+input_text.bind("<Control-V>", paste_input)  # Handle Shift
+input_text.bind("<Command-v>", paste_input)  # Mac
+
+# Enable Ctrl+C (copy) in input_text
+def copy_input(event=None):
+    input_text.event_generate("<<Copy>>")
+    return "break"
+
+input_text.bind("<Control-c>", copy_input)
+input_text.bind("<Control-C>", copy_input)
+input_text.bind("<Command-c>", copy_input)
+
+
 app.mainloop()
