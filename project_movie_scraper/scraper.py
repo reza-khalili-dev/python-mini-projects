@@ -8,8 +8,7 @@ import webbrowser
 class MovieScraper:
     def __init__(self):
         options = Options()
-        # برای مشاهده بهتر، headless را خاموش می‌کنیم
-        # options.add_argument("--headless")
+
         options.add_argument("--disable-gpu")
         options.add_argument("--log-level=3")
         service = Service()
@@ -35,7 +34,7 @@ class MovieScraper:
 
         movies = []
         items = self.driver.find_elements(By.CSS_SELECTOR, ".lister-item")
-        for item in items[:20]:  # محدود به ۲۰ فیلم اول
+        for item in items[:20]: 
             try:
                 title_elem = item.find_element(By.CSS_SELECTOR, ".lister-item-header a")
                 title_text = title_elem.text
