@@ -1,0 +1,6 @@
+ttkbootstrap
+selenium
+webdriver-manager
+pillow
+requests
+beautifulsoup4
