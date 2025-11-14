@@ -1,6 +1,4 @@
-ttkbootstrap
 selenium
-webdriver-manager
+ttkbootstrap
 pillow
 requests
-beautifulsoup4
